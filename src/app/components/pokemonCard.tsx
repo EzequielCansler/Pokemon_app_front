@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { GetPokemonList } from "../lib/pokemonAPI";
-import { PokemonList } from "./pokemon-grid";
 
 export default function Home() {
   const [poke, setPoke] = useState<Pokemon[]>([]);
@@ -39,14 +38,14 @@ export default function Home() {
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <img
                     src={pokemon.img}
-                    alt={pokemon.id}
+                    alt={pokemon.name}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                   />
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
                     <h3 className="text-sm text-gray-700">
-                      <a href={pokemon.id}>
+                      <a href={`/pokemon/${pokemon.id}`}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {pokemon.name}
                       </a>
