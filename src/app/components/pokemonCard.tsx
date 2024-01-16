@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { GetPokemonList } from "../lib/pokemonAPI";
+import Link from "next/link";
 
 export default function Home() {
   const [poke, setPoke] = useState<Pokemon[]>([]);
@@ -45,10 +46,10 @@ export default function Home() {
                 <div className="mt-4 flex justify-between">
                   <div>
                     <h3 className="text-sm text-gray-700">
-                      <a href={`/pokemon/${pokemon.id}`}>
+                      <Link href={`/pokemon/${pokemon.id}`}>
                         <span aria-hidden="true" className="absolute inset-0" />
                         {pokemon.name}
-                      </a>
+                      </Link>
                     </h3>
                     <p className="mt-1 text-sm text-gray-500">nada</p>
                     <p className="text-sm font-medium text-gray-900">nada</p>
